@@ -1,0 +1,566 @@
+/* ===========================================
+   Curation Shared Styles
+   =========================================== */
+
+/* ===========================================
+   Local Fonts
+   =========================================== */
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('fonts/inter-300.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/inter-400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/inter-500.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/playfair-400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/playfair-600.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/playfair-400-italic.ttf') format('truetype');
+}
+
+/* ===========================================
+   Variables
+   =========================================== */
+
+:root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --text-muted: #888;
+    --accent: #5fa8d3;
+    --accent-secondary: #9b5de5;
+    --accent-gold: #c9a227;
+    --price: #00d26a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ===========================================
+   Header
+   =========================================== */
+
+header {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4rem;
+}
+
+.date {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h1.gold {
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===========================================
+   Intro Section
+   =========================================== */
+
+.intro {
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.intro-text {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.intro-text p:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--text);
+    font-style: italic;
+}
+
+.intro-text em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+/* ===========================================
+   Curation Entry (Art + Context)
+   =========================================== */
+
+.curation-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 6rem;
+    padding-bottom: 6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.curation-entry:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.curation-entry:nth-child(even) {
+    direction: rtl;
+}
+
+.curation-entry:nth-child(even) > * {
+    direction: ltr;
+}
+
+.artwork {
+    position: relative;
+}
+
+.artwork img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.artwork:hover img {
+    transform: scale(1.02);
+}
+
+.price-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--price);
+    border: 1px solid rgba(0, 210, 106, 0.3);
+}
+
+.context {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.news-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.news-tag::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.commentary {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.art-info {
+    background: var(--surface);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+
+.art-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.artist {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.art-description {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.art-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: opacity 0.2s;
+}
+
+.art-link:hover {
+    opacity: 0.7;
+}
+
+/* ===========================================
+   Summary Section
+   =========================================== */
+
+.summary {
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border);
+}
+
+.summary-text {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.summary-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+}
+
+.summary-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+}
+
+.summary-text p:last-child {
+    margin-bottom: 0;
+}
+
+.summary-text strong {
+    color: var(--text);
+}
+
+/* ===========================================
+   Index / Listing Page
+   =========================================== */
+
+.index-header {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.index-header h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin-bottom: 1.5rem;
+}
+
+.index-header .subtitle {
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+.curation-list {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.curation-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.curation-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.curation-card .card-date {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.curation-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.curation-card .card-description {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.curation-card .card-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.curation-card .card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.curation-card .arrow {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.curation-card:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* ===========================================
+   Back Button
+   =========================================== */
+
+.back-btn {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    margin: 2rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: var(--text);
+}
+
+.back-btn .arrow {
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.back-btn:hover .arrow {
+    transform: translateX(-4px);
+}
+
+/* ===========================================
+   Share Button
+   =========================================== */
+
+.share-section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.875rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+.share-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* ===========================================
+   Footer
+   =========================================== */
+
+footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+}
+
+.curator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.curator-name {
+    color: var(--text);
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+
+@media (max-width: 768px) {
+    .curation-entry,
+    .curation-entry:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    header, .index-header {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .curation-entry {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        gap: 1.5rem;
+    }
+
+    .curation-list {
+        padding: 2rem 1rem;
+    }
+
+    .curation-card {
+        padding: 1.5rem;
+    }
+
+    .curation-card .card-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
