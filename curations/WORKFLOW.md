@@ -22,6 +22,38 @@ Alternative sources:
 
 ## 2. Query Artworks from objkt.com
 
+### Option A: Community Artists (Recommended)
+
+Use the `curate_community.py` script to pull random artworks from your community:
+
+```bash
+cd /home/node/.openclaw/workspace
+
+# Random art from all community artists (shuffled)
+python3 curate_community.py tezos_users.csv 50
+
+# Random art from 25 randomly chosen artists
+python3 curate_community.py tezos_users.csv 50 "" 25
+
+# Random art from 20 artists, max 10ꜩ
+python3 curate_community.py tezos_users.csv 50 10 20
+```
+
+**Arguments:**
+1. CSV file with community addresses (default: `tezos_users.csv`)
+2. Limit — max artworks to fetch (default: 50)
+3. Max price in tez (optional, use `""` to skip)
+4. Artist sample — randomly pick N artists from the pool (optional)
+
+The script:
+- Randomly shuffles/samples artists each run
+- Filters for pieces with descriptions (>50 chars) — essential for thematic pairing
+- Outputs formatted markdown with IPFS links and objkt URLs
+
+---
+
+### Option B: General objkt Query
+
 ### Basic query (recent pieces with images):
 ```bash
 curl -s -X POST https://data.objkt.com/v3/graphql \
@@ -84,6 +116,11 @@ The concept shapes:
 </header>
 ```
 
+For community curations, add the tag to the date:
+```html
+<p class="date">April 15, 2026 · Community Curation</p>
+```
+
 ### Introduction (after header)
 ```html
 <section class="intro container">
@@ -139,15 +176,20 @@ curations/
 ├── WORKFLOW.md          # This file
 └── YYYY-MM-DD/
     ├── index.html       # Main curation
-    └── [variant].html   # Alternative versions (e.g., affordable.html)
+    └── [variant].html   # Alternative versions (e.g., affordable.html, static.html)
 ```
+
+**Naming conventions:**
+- `index.html` — primary curation of the day
+- `[theme].html` — additional curations (e.g., `fractures.html`, `static.html`)
+- Community curations: add "· Community" to the date line in the header
 
 ---
 
 ## 7. Checklist
 
 - [ ] Fetched current news (date-relevant)
-- [ ] Queried objkt API for artworks
+- [ ] Queried artworks (community script or general objkt API)
 - [ ] Selected 3-5 pieces with strong descriptions
 - [ ] Found thematic thread connecting all pieces
 - [ ] Wrote title + subtitle
@@ -156,7 +198,8 @@ curations/
 - [ ] Wrote closing summary
 - [ ] Verified all IPFS image links work
 - [ ] Verified all objkt links are correct
-- [ ] Removed any price/commercial elements (optional)
+- [ ] Added to main index (`curations/index.html`)
+- [ ] For community curations: added "· Community" tag to date and index card
 - [ ] Committed and pushed to remote
 
 ---
