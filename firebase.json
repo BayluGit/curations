@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "curations",
+    "ignore": [
+      "**/*.md"
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
