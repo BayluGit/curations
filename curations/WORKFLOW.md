@@ -157,6 +157,52 @@ curations/
 - [ ] Verified all IPFS image links work
 - [ ] Verified all objkt links are correct
 - [ ] Removed any price/commercial elements (optional)
+- [ ] Committed and pushed to remote
+
+---
+
+## 8. Commit & Push
+
+After completing a curation, commit and push to the remote repository.
+
+### Add and commit:
+```bash
+cd /home/node/.openclaw/workspace
+
+# Stage the new curation
+git add curations/
+
+# Commit with descriptive message
+git commit -m "Add curation: [Title] — [Date]
+
+[Brief description of the theme and pairings]"
+```
+
+### Push to remote:
+```bash
+git push origin master
+```
+
+### Example commit message:
+```
+Add curation: Witnesses — April 15, 2026
+
+Five works about those who see — silenced, hidden, or unable to look away.
+Pairings: journalist detained, hidden archive discovered, allies watching war.
+```
+
+### If pushing a batch of curations:
+```bash
+git add curations/
+git commit -m "Add curations: April 11-15, 2026
+
+- Almost: Art for an age of perpetual proximity
+- Grund: German news curation on shifting foundations
+- Witnesses: Those who see — silenced or unable to look away"
+git push origin master
+```
+
+**Repository:** https://github.com/BayluGit/curations
 
 ---
 
@@ -190,7 +236,7 @@ curations/
 
 ---
 
-## 8. Fonts
+## 9. Fonts
 
 Fonts are stored locally in `curations/fonts/`:
 - `inter-300.ttf`, `inter-400.ttf`, `inter-500.ttf`
@@ -200,4 +246,4 @@ The `@font-face` declarations are in `styles.css`. No external font requests nee
 
 ---
 
-*Last updated: April 11, 2026*
+*Last updated: April 15, 2026*
