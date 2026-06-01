@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} — {{DATE_LONG}}</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <a href="../" class="back-btn"><span class="arrow">←</span> Back</a>
+    <header>
+        <p class="date">{{DATE_LONG}}</p>
+        <h1>{{TITLE}}</h1>
+        <p class="subtitle">{{SUBTITLE}}</p>
+    </header>
+
+    <section class="intro container">
+        <div class="intro-text">
+            <p>{{INTRO_1}}</p>
+            <p>{{INTRO_2}}</p>
+            <p>{{INTRO_3}}</p>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <!-- ENTRY 1 -->
+        <article class="curation-entry">
+            <div class="artwork">
+                <img src="{{IMG_1}}" alt="{{ART_TITLE_1}} by {{ARTIST_1}}">
+            </div>
+            <div class="context">
+                <span class="news-tag">{{TAG_1}}</span>
+                <h2>{{HEADLINE_1}}</h2>
+                <p class="commentary">{{COMMENTARY_1}}</p>
+                <div class="art-info">
+                    <p class="art-title">{{ART_TITLE_1}}</p>
+                    <p class="artist">by {{ARTIST_1}}</p>
+                    <p class="art-description">"{{ART_DESC_1}}"</p>
+                    <a href="{{OBJKT_1}}" class="art-link" target="_blank">View on objkt →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ENTRY 2 -->
+        <article class="curation-entry">
+            <div class="artwork">
+                <img src="{{IMG_2}}" alt="{{ART_TITLE_2}} by {{ARTIST_2}}">
+            </div>
+            <div class="context">
+                <span class="news-tag">{{TAG_2}}</span>
+                <h2>{{HEADLINE_2}}</h2>
+                <p class="commentary">{{COMMENTARY_2}}</p>
+                <div class="art-info">
+                    <p class="art-title">{{ART_TITLE_2}}</p>
+                    <p class="artist">by {{ARTIST_2}}</p>
+                    <p class="art-description">"{{ART_DESC_2}}"</p>
+                    <a href="{{OBJKT_2}}" class="art-link" target="_blank">View on objkt →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ENTRY 3 -->
+        <article class="curation-entry">
+            <div class="artwork">
+                <img src="{{IMG_3}}" alt="{{ART_TITLE_3}} by {{ARTIST_3}}">
+            </div>
+            <div class="context">
+                <span class="news-tag">{{TAG_3}}</span>
+                <h2>{{HEADLINE_3}}</h2>
+                <p class="commentary">{{COMMENTARY_3}}</p>
+                <div class="art-info">
+                    <p class="art-title">{{ART_TITLE_3}}</p>
+                    <p class="artist">by {{ARTIST_3}}</p>
+                    <p class="art-description">"{{ART_DESC_3}}"</p>
+                    <a href="{{OBJKT_3}}" class="art-link" target="_blank">View on objkt →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ENTRY 4 -->
+        <article class="curation-entry">
+            <div class="artwork">
+                <img src="{{IMG_4}}" alt="{{ART_TITLE_4}} by {{ARTIST_4}}">
+            </div>
+            <div class="context">
+                <span class="news-tag">{{TAG_4}}</span>
+                <h2>{{HEADLINE_4}}</h2>
+                <p class="commentary">{{COMMENTARY_4}}</p>
+                <div class="art-info">
+                    <p class="art-title">{{ART_TITLE_4}}</p>
+                    <p class="artist">by {{ARTIST_4}}</p>
+                    <p class="art-description">"{{ART_DESC_4}}"</p>
+                    <a href="{{OBJKT_4}}" class="art-link" target="_blank">View on objkt →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ENTRY 5 (delete if unused) -->
+        <article class="curation-entry">
+            <div class="artwork">
+                <img src="{{IMG_5}}" alt="{{ART_TITLE_5}} by {{ARTIST_5}}">
+            </div>
+            <div class="context">
+                <span class="news-tag">{{TAG_5}}</span>
+                <h2>{{HEADLINE_5}}</h2>
+                <p class="commentary">{{COMMENTARY_5}}</p>
+                <div class="art-info">
+                    <p class="art-title">{{ART_TITLE_5}}</p>
+                    <p class="artist">by {{ARTIST_5}}</p>
+                    <p class="art-description">"{{ART_DESC_5}}"</p>
+                    <a href="{{OBJKT_5}}" class="art-link" target="_blank">View on objkt →</a>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <section class="summary">
+        <div class="summary-text">
+            <h3>{{CLOSING_TITLE}}</h3>
+            <p>{{CLOSING_1}}</p>
+            <p>{{CLOSING_2}}</p>
+            <p>{{CLOSING_3}}</p>
+        </div>
+    </section>
+
+    <section class="share-section">
+        <a href="https://x.com/intent/tweet?text={{SHARE_TEXT_ENCODED}}" class="share-btn" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Share
+        </a>
+    </section>
+
+    <footer>
+        <p class="curator-sig">Curated by ✨ Baylu</p>
+        <p class="contact">Questions, comments, or want to collaborate? <a href="mailto:info@baylu.com">info@baylu.com</a></p>
+    </footer>
+</body>
+</html>
